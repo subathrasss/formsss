@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student details</title>
+</head>
+
+<body>
+    <sty
+    <div id="c">
+        <h1>STUDENT FORM</h1>
+        <div>
+            <form>
+                <table>
+                    <tr>
+                        <td>Name:</td>
+                        <td><input id="inp" type="text" placeholder="name"></td>
+                    </tr>
+                    <tr>
+                        <td>Age:</td>
+                        <td><input id="age" type="number" placeholder="age"></td>
+                    </tr>
+                    <tr>
+                        <td>Gender:</td>
+                        <td><input type="radio" name="gender" value="M">M<input type="radio" name="gender" value="F">F</td>
+                    </tr>
+                    <tr>
+                        <td>Course:</td>
+                        <td><select id="sel">
+                                <option value="FSWD">FSWD</option>
+                                <option value="FLutter">Flutter</option>
+                                <option value="Html&Css">Html&Css</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><input id="em" type="text" placeholder="name"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input id="save" type="save" placeholder="save"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div>
+            <form >
+                <table border="1" id="t2">
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Course</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                   
+
+                </table>
+            </form>
+        </div>
+    </div>
+    <script>
+        var inp=document.getElementById("inp")
+        var save=document.getElementById("save")
+        var t2=document.getElementById("t2")
+        var age=document.getElementById("age")
+        var gen=document.getElementsByName("gender")
+        var em=document.getElementById("em")
+        var mf
+        var sel=document.getElementById("sel")
+
+      
+      
+        gen[0].addEventListener("click",function(){
+            mf=gen[0].value
+        })
+        gen[1].addEventListener("click",function(){
+            mf=gen[1].value
+        })
+        save.addEventListener("click",function(){
+            var n=document.createElement("tr")
+            n.innerHTML="<td>"+inp.value+ "</td>"+"<td>"+age.value+"</td>"+"<td>"+mf+"</td>"+"<td>"+sel.value+"</td>"+"<td>"+em.value+"</td>"+"<td>"+"<button onclick='del(event)'>delete</button>"+"</td"
+            
+            t2.append(n)
+            })
+            function del(event)
+        {
+            event.target.parentElement.remove()
+
+        }
+    </script>
+</body>
+
+</html>
