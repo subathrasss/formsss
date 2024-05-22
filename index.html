@@ -8,10 +8,33 @@
 </head>
 
 <body>
-    <sty
-    <div id="c">
-        <h1>STUDENT FORM</h1>
-        <div>
+    <style>
+        #c{
+            background-color: rgb(235, 222, 222);
+            color: rgb(50, 40, 40);
+            width: 400px;
+            height: 500px;
+            margin-left: 400px;
+            margin-top: 200px;
+        }
+        .ft{
+            padding: 50px;
+            align-items: center;
+        }
+        @media screen and (max-width: 600px)
+        {
+            #c{
+                display: inline;
+            }
+        }
+            
+        
+    </style>
+    <div  id="c">
+       
+        <div class="ft">
+            <h1>STUDENT FORM</h1>
+            <div >
             <form>
                 <table>
                     <tr>
@@ -39,7 +62,7 @@
                         <td><input id="em" type="text" placeholder="name"></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input id="save" type="save" placeholder="save"></td>
+                        <td colspan="2"><input style="background-color: aqua; text-align: center;" id="save" type="save" placeholder="save"></td>
                     </tr>
                 </table>
             </form>
@@ -59,6 +82,7 @@
             </form>
         </div>
     </div>
+    
     <script>
         var inp=document.getElementById("inp")
         var save=document.getElementById("save")
@@ -79,16 +103,17 @@
         })
         save.addEventListener("click",function(){
             var n=document.createElement("tr")
-            n.innerHTML="<td>"+inp.value+ "</td>"+"<td>"+age.value+"</td>"+"<td>"+mf+"</td>"+"<td>"+sel.value+"</td>"+"<td>"+em.value+"</td>"+"<td>"+"<button onclick='del(event)'>delete</button>"+"</td"
+            n.innerHTML="<td>"+inp.value+ "</td>"+"<td>"+age.value+"</td>"+"<td>"+mf+"</td>"+"<td>"+sel.value+"</td>"+"<td>"+em.value+"</td>"+"<td>"+"<button style='background-color: aqua' onclick='del(event)'>delete</button>"+"</td"
             
             t2.append(n)
             })
             function del(event)
         {
-            event.target.parentElement.remove()
+            event.target.closest.remove()
 
         }
     </script>
+    </div>
 </body>
 
 </html>
