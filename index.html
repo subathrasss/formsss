@@ -92,7 +92,7 @@
         var em=document.getElementById("em")
         var mf
         var sel=document.getElementById("sel")
-
+var regex=/[@]/
       
       
         gen[0].addEventListener("click",function(){
@@ -102,10 +102,17 @@
             mf=gen[1].value
         })
         save.addEventListener("click",function(){
+           if(regex.test(em.value))
+           {
             var n=document.createElement("tr")
             n.innerHTML="<td>"+inp.value+ "</td>"+"<td>"+age.value+"</td>"+"<td>"+mf+"</td>"+"<td>"+sel.value+"</td>"+"<td>"+em.value+"</td>"+"<td>"+"<button style='background-color: aqua' onclick='del(event)'>delete</button>"+"</td"
             
             t2.append(n)
+            inp.value=em.value=age.value=" "
+           }
+           else{
+            alert("enter correct email and save")
+           }
             })
             function del(event)
         {
